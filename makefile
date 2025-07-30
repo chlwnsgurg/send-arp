@@ -1,12 +1,12 @@
-LDLIBS=-lpcap
+LDLIBS += -lpcap
 
 all: send-arp
 
-main.o: mac.h ip.h ethhdr.h arphdr.h main.cpp
+main.o: main.cpp
 
-arphdr.o: mac.h ip.h arphdr.h arphdr.cpp
+arphdr.o: arphdr.h arphdr.cpp
 
-ethhdr.o: mac.h ethhdr.h ethhdr.cpp
+ethhdr.o: ethhdr.h ethhdr.cpp
 
 ip.o: ip.h ip.cpp
 
