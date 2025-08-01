@@ -98,7 +98,7 @@ int attack(char* dev, char* sender, char* target){
         }
         EthHdr* eth_hdr = (EthHdr*)packet;
         ArpHdr* arp_hdr = (ArpHdr*)(eth_hdr + 1);
-        if (eth_hdr->type() == EthHdr::ETHERTYPE_ARP && arp_hdr->op() && ArpHdr::OP_REPLY && arp_hdr->sip()==sip) {
+        if (eth_hdr->type() == EthHdr::ETHERTYPE_ARP && arp_hdr->op() == ArpHdr::OP_REPLY && arp_hdr->sip()==sip) {
             smac = arp_hdr->smac();
             printf("\n\n****Sender Mac Addr Capture Success!****\n\n");
             break;
